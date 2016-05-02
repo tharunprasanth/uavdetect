@@ -27,7 +27,6 @@ RNG rng(12345);
  */
 int main(int argc, char **argv)
 {
-	VideoCapture capture;
 
 	//-- 1. Load the cascades
 	if (!flight_cascade.load(flight_cascade_name)) {
@@ -64,13 +63,15 @@ void detectAndDisplay(Mat image)
 	equalizeHist(image_gray, image_gray);
 	//-- Detect faces
 	flight_cascade.detectMultiScale(image_gray, flight, 1.1, 2,
-					0 | CV_HAAR_SCALE_IMAGE, Size(30, 30));
+					0 | CV_HAAR_SCALE_IMAGE, Size(100,100));
 
-	for (size_t i = 0; i < flight.size(); i++) {
-                Point center( flight[i].x + flight[i].width/2, flight[i].y + flight[i].height/2 );
-		rectangle( image, cvPoint(flight[i].x, flight[i].y), cvPoint(flight[i].x + flight[i].width, flight[i].y + flight[i].height), Scalar(0,0,255),1,8,0);
+	//for (size_t i = 0; i < flight.size(); i++) {
+	                
+	for (size_t i = 0; i < 1; i++) {
+		Point center( flight[i].x + flight[i].width/2, flight[i].y + flight[i].height/2 );
+		rectangle( image, cvPoint(flight[i].x, flight[i].y), cvPoint(flight[i].x + flight[i].width, flight[i].y + flight[i].height), Scalar(0,0,255),2);
+		 putText(image, "Quad",  cvPoint(flight[i].x, flight[i].y), FONT_HERSHEY_PLAIN, 1.0, Scalar(255, 0, 0), 2.0);
 		Mat faceROI = image_gray(flight[i]);
-		printf("\n\n success");
 	}
 	//-- Show what you got
 	namedWindow(" Display window ", WINDOW_AUTOSIZE);	// Create a window for display.
