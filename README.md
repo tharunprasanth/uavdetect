@@ -19,6 +19,7 @@ $ sudo apt-get install gimp-plugin-registry
 ```
 
 <a name="train"/>
+
 ### Training the filter
 
 1)Get more images of the uav.<br />
@@ -49,11 +50,13 @@ $ cp data/cascade.xml .
 
 
 <a name="build"/>
+
 ### Build
 ```
 $ make
 ```
 <a name="run"/>
+
 ### Run
 ```
 $ ./flightdetector samples/<img_name>
