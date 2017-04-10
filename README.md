@@ -10,6 +10,7 @@
 
 
 <a name="requirements"/>
+
 ### System Requirements
 * Opencv
 * Gimp  
@@ -24,6 +25,7 @@ $ sudo apt-get install gimp-plugin-registry
 3) Created a batch process in gimp to convert the original images to grayscale and to resize them to 40 x 40 pixels.<br />
 4) Took the grayscale images and applied the following transformations:upside-down, blur 3.0 , brightness +0.5 ,  brightness -0.5 , contrast +0.5, contrast -0.5 .<br />
 5) create the info file
+
 ```
 $ cd uavdetect
 $ find ./uav_more -iname "*.jpg" > positives.txt
