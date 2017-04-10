@@ -20,6 +20,7 @@ $ sudo apt-get install gimp-plugin-registry
 
 <a name="train"/>
 ### Training the filter
+
 1)Get more images of the uav.<br />
 2)Here we have all the images in uav_more directory.<br />
 3) Created a batch process in gimp to convert the original images to grayscale and to resize them to 40 x 40 pixels.<br />
@@ -49,7 +50,6 @@ $ cp data/cascade.xml .
 
 <a name="build"/>
 ### Build
-
 ```
 $ make
 ```
